@@ -22,7 +22,7 @@ The Helm Chart is deployed to the Helm Artifactory.
 #### Configuration 
 
 |Parmater|Description|Default Value|
-|========|===========|=|
+|------|-------|-|
 |app.name|Name for all Kubernetes Configs|`foundry`|
 |persistence.enabled|Use persistent storage|`false`|
 |persistence.storageClassName|Type of PVC|`default`|
