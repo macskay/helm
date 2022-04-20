@@ -19,6 +19,29 @@ The Helm Chart is deployed to the Helm Artifactory.
  $ helm upgrade --install -i foundry macskay/foundry
 ```
 
+#### Configuration 
+
+|Parmater|Description|Default Value|
+|========|===========|=|
+|app.name|Name for all Kubernetes Configs|`foundry`|
+|persistence.enabled|Use persistent storage|`false`|
+|persistence.storageClassName|Type of PVC|`default`|
+|persistence.size|Size of PVC|`2Gi`|
+|persistence.claim.name|Name of PVC|`data-pvc-foundry`|
+|persistence.claim.existing|If true, creation is skipped|`false`|
+|ingress.enabled|Use ingress|`false`|
+|ingress.hosts|List of all valid URLs|[`www.example.com`]|
+|ingress.className|Ingress class name|`nginx`|
+|forceSslRedirect|Always Redirect to HTTPS|`false`|
+|ssl.enabled|Enable SSL Ingress|`false`|
+|ssl.clusterIssuer.enabled|Enable Cluster Issuer|`false`|
+|ssl.clusterIssuer.name|Name of Cluster Issuer|`letsencrypt`|
+|image.name|Image to use for Deployment|`macskay/foundry`|
+|image.tag|Tag to use for Deployment|`latest`|
+|image.pullSecret|K8s Secret to Use for pulling Images|`""`|
+|conatainer.port|Port to expose in Service|`30000`|
+
+
 ## Manual Setup
 
 ### Building Docker Image Manually
