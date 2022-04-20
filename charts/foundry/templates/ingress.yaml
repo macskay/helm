@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: foundry
+  name: {{ .Values.app.name }}
   labels:
-    app: foundry
+    app: {{ .Values.app.name }}
   annotations:
     kubernetes.io/ingress.class: {{ .Values.ingress.className }}
     {{- if .Values.ingress.forceSslRedirect }}
@@ -24,17 +24,16 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: "foundry"
+                name: {{ .Values.app.name }}
                 port:
                   number: 30000
     {{- end }}
   {{- if .Values.ingress.ssl.enabled }}
   tls:
-    - secretName: foundry-prod-www-cert
+    - secretName: {{ .Values.app.name }}-prod-www-cert
       {{- range .Values.ingress.hosts }}
       hosts:
         - {{ . }}
       {{- end }}
   {{- end }}
-
 {{- end }}

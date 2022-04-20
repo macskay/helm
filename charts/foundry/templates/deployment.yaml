@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: foundry
-  name: foundry
+    app: {{ .Values.app.name }}
+  name: {{ .Values.app.name }}
 spec:
   selector:
     matchLabels:
-      app: foundry
+      app: {{ .Values.app.name }}
   replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: foundry
+        app: {{ .Values.app.name }}
     spec:
       containers:
         - name: foundry

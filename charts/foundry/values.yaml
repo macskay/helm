@@ -1,3 +1,6 @@
+app:
+  name: "foundry"
+
 persistence:
   enabled: false
   storageClassName: "default"
