@@ -16,7 +16,7 @@ The Helm Chart is deployed to the Helm Artifactory.
 
 ### Installing Foundry
 ```
- $ helm upgrade --install -i foundry macskay macskay/foundry
+ $ helm upgrade --install -i foundry macskay/foundry
 ```
 
 ## Manual Setup
