@@ -37,10 +37,5 @@ spec:
       volumes:
         - name: foundry-data
           persistentVolumeClaim:
-            {{- if .Values.persistence.existingClaim }}
-            claimName: {{ .Values.persistence.existingClaim }}
-            {{- end }}
-            {{- if .Values.persistence.claimName }}
-            claimName: {{ .Values.persistence.claimName }}
-            {{- end }}
+            claimName: {{ .Values.persistence.claim.name }}
       {{- end }}
