@@ -2,9 +2,7 @@ persistence:
   enabled: false
   storageClassName: "default"
   size: 2Gi
-  claimName:
-    name: "data-pvc-foundry"
-    existing: false
+  existingClaim: ""
 
 ingress:
   enabled: false
