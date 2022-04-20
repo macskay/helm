@@ -1,4 +1,4 @@
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/foundry)](https://artifacthub.io/packages/search?repo=foundry)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/macskay)](https://artifacthub.io/packages/search?repo=macskay)
 
 # Foundry VTT Helm Chart
 
