@@ -8,5 +8,12 @@ This repository holds a Dockerfile as well as a helm chart that deploys FoundryV
 
 The Helm Chart is deployed to the Helm Artifactory.
 ```
- $ helm repo add macskay  
+ $ helm repo add macskay https://macskay.github.io/helm
+ $ helm repo update
+```
+
+You can search for all repositoies by using
+
+```
+ $ helm search repo macskay
 ```
