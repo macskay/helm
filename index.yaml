@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  foundryvtt:
+  - apiVersion: v2
+    appVersion: "9.269"
+    created: "2022-04-20T10:49:51.428425219+02:00"
+    description: Community-built Helm Chart for Foundry VTT
+    digest: c74f5aa938a7bd02c3d08b1c5130fec85d715d76c7978a196d1b1c486f2bb480
+    home: https://www.foundryvtt.com
+    icon: https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.foundryvtt.com&size=16
+    kubeVersion: '> 1.20.0-0'
+    maintainers:
+    - name: Maximilian Klingmann
+    name: foundryvtt
+    sources:
+    - https://www.github.com/macskay/foundryvtt-helm
+    type: application
+    urls:
+    - foundryvtt-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-04-20T10:49:51.428082619+02:00"

@@ -1,0 +1,40 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: foundry
+  labels:
+    app: foundry
+  annotations:
+    kubernetes.io/ingress.class: {{ .Values.ingress.className }}
+    {{- if .Values.ingress.forceSslRedirect }}
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    {{- end }}
+    nginx.ingress.kubernetes.io/proxy-body-size: 1024m
+    {{- if .Values.ingress.ssl.clusterIssuer.enabled }}
+    cert-manager.io/cluster-issuer: {{ .Values.ingress.ssl.clusterIssuer.name }}
+    {{- end }}
+spec:
+  rules:
+    {{- range .Values.ingress.hosts }}
+    - host: {{ . }}
+      http:
+        paths:
+          - path: "/"
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: "foundry"
+                port:
+                  number: 30000
+    {{- end }}
+  {{- if .Values.ingress.ssl.enabled }}
+  tls:
+    - secretName: foundry-prod-www-cert
+      {{- range .Values.ingress.hosts }}
+      hosts:
+        - {{ . }}
+      {{- end }}
+  {{- end }}
+
+{{- end }}

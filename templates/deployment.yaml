@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: foundry
+  name: foundry
+spec:
+  selector:
+    matchLabels:
+      app: foundry
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: foundry
+    spec:
+      containers:
+        - name: foundry
+          image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - mountPath: /foundry_data
+              name: foundry-data
+          ports:
+            - containerPort: {{ .Values.container.port }}
+              name: foundry
+          imagePullPolicy: Always
+      restartPolicy: Always
+      {{- if .Values.image.pullSecret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+      {{- end }}
+      volumes:
+        - name: foundry-data
+          persistentVolumeClaim:
+            claimName: data-pvc-foundry

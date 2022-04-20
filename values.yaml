@@ -1,0 +1,24 @@
+persistence:
+  enabled: false
+  storageClassName: ""
+  size: 2Gi
+
+ingress:
+  enabled: false
+  hosts:
+    - "www.example.com"
+  className: "nginx"
+  forceSSlRedirect: false
+  ssl:
+    enabled: false
+    clusterIssuer:
+      enabled: false
+      name: "letsencrypt"
+
+image:
+  name: "macskay/foundry"
+  tag: "latest"
+  pullSecret: ""
+
+container:
+  port: 30000
