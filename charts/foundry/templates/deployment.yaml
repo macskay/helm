@@ -33,7 +33,9 @@ spec:
       imagePullSecrets:
         - name: {{ .Values.image.pullSecret }}
       {{- end }}
+      {{- if .Values.persistence.enabled }}
       volumes:
         - name: foundry-data
           persistentVolumeClaim:
-            claimName: data-pvc-foundry
+            claimName: {{ .Values.persistence.claimName }}
+      {{- end }}

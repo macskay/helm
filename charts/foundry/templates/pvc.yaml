@@ -1,4 +1,4 @@
-{{- if .Values.persistence.enabled }}
+{{- if .Values.persistence.enabled && not .Values.persistence.claimName.existing }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
