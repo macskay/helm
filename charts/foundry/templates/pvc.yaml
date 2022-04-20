@@ -1,8 +1,8 @@
-{{- if and (.Values.persistence.enabled) (not .Values.persistence.claimName.existing) }}
+{{- if and (.Values.persistence.enabled) (not .Values.persistence.existingClaim) }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: data-pvc-foundry
+  name: {{ .Values.persistence.existingClaim }}
 spec:
   accessModes:
   - ReadWriteOnce
