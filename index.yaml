@@ -1,6 +1,6 @@
 apiVersion: v1
 entries:
-  foundryvtt:
+  foundry:
   - apiVersion: v2
     appVersion: "9.269"
     created: "2022-04-20T11:13:59.666759339+02:00"
@@ -13,9 +13,9 @@ entries:
     - name: Maximilian Klingmann
     name: foundryvtt
     sources:
-    - https://www.github.com/macskay/foundryvtt-helm
+    - https://www.github.com/macskay/helm/charts/foundry
     type: application
     urls:
-    - //github.com/macskay/helm/releases/download/foundry_v9_269/foundryvtt-1.0.0.tgz
+    - //github.com/macskay/helm/releases/download/foundry_v9_269/foundry-1.0.0.tgz
     version: 1.0.0
 generated: "2022-04-20T11:13:59.665602768+02:00"
