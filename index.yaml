@@ -16,6 +16,6 @@ entries:
     - https://www.github.com/macskay/foundryvtt-helm
     type: application
     urls:
-    - foundryvtt-1.0.0.tgz
+    - //github.com/macskay/helm/releases/download/foundry_v9_269/foundryvtt-1.0.0.tgz
     version: 1.0.0
 generated: "2022-04-20T11:13:59.665602768+02:00"
