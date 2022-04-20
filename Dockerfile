@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+EXPOSE 30000
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y libssl-dev curl wget unzip
