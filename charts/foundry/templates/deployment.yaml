@@ -40,8 +40,7 @@ spec:
             {{- if .Values.persistence.existingClaim }}
             claimName: {{ .Values.persistence.existingClaim }}
             {{- end }}
-            {{- if .Values.persistence.existingClaim }}
+            {{- if .Values.persistence.claimName }}
             claimName: {{ .Values.persistence.claimName }}
             {{- end }}
-
       {{- end }}
