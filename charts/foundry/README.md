@@ -9,7 +9,7 @@ This repository holds a Dockerfile as well as a helm chart that deploys FoundryV
 The Helm Chart is deployed to the Helm Artifactory.
 ```
  $ helm repo add macskay https://macskay.github.io/helm/
- $ helm repo update 
+ $ helm repo update
 ```
 
 ### Installing Foundry
@@ -17,7 +17,7 @@ The Helm Chart is deployed to the Helm Artifactory.
  $ helm upgrade --install -i foundry macskay/foundry
 ```
 
-#### Configuration 
+#### Configuration
 
 |Parmater|Description|Default Value|
 |------|-------|-|
@@ -44,10 +44,11 @@ The Helm Chart is deployed to the Helm Artifactory.
 
 ### Building Docker Image Manually
 
-For the Docker Image to build you need to log in to your Foundry VTT and generate a "Timed URL" for Linux. Insert the URL into the Dockerfile (Beware the link is only valid for a couple of minutes) and run
+For the Docker Image to build you need to log in to your Foundry VTT and generate a "Timed URL" for Linux. Inject the URL into the Dockerfile (Beware the link is only valid for a couple of minutes) via variable `TOKEN_URL` while building as shown below
 
+Example:
 ```
- $ docker build -t foundry:latest
+ $ docker build -t foundry:stable --build_args TOKEN_URL <insert_url>
 ```
 
 Optionally also run a tag for your version for example:
